@@ -21,7 +21,7 @@ const ListLoaiHoa = ({ navigation }) => {
 
   const getLoaihoas = async () => {
     try {
-      const response = await fetch("http://192.168.1.8:3000/loaihoas");
+      const response = await fetch("http://10.45.230.217:3000/loaihoas");
       const json = await response.json();
       gands(json);
     } catch (error) {
@@ -68,6 +68,18 @@ const ListLoaiHoa = ({ navigation }) => {
       >
         <Text style={styles.textUpdate}>Thêm loại hoa</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.rowUpdate}
+        onPress={() => navigation.navigate("dangkynguoidung")}
+      >
+        <Text style={styles.textUpdate}>Thêm người dùng</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.rowUpdate}
+        onPress={() => navigation.navigate("dangnhapnguoidung")}
+      >
+        <Text style={styles.textUpdate}>Đăng Nhập</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -99,6 +111,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     backgroundColor: "#19A7CE",
     borderRadius: 10,
+    borderColor: "black"
   },
   textUpdate: {
     fontSize: 18,

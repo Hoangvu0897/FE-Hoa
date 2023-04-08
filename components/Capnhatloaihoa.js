@@ -13,7 +13,7 @@ const Capnhatloaihoa = () => {
         tenloai,
       };
       console.log(JSON.stringify(lh));
-      const response = await fetch("http://192.168.1.8:3000/loaihoas", {
+      const response = await fetch("http://10.45.230.217:3000/loaihoas", {
         method: "post",
         headers: {
           Accept: "application/json",
@@ -36,7 +36,7 @@ const Capnhatloaihoa = () => {
       console.log(lh);
       console.log(JSON.stringify(lh));
       const response = await fetch(
-        "http://192.168.1.8:3000/loaihoas/" + maloai,
+        "http://10.45.230.217:3000/loaihoas/" + maloai,
         {
           method: "patch",
           headers: {
@@ -61,7 +61,7 @@ const Capnhatloaihoa = () => {
       console.log(lh);
       console.log(JSON.stringify(lh));
       const response = await fetch(
-        "http://192.168.1.8:3000/loaihoas/" + maloai,
+        "http://10.45.230.217:3000/loaihoas/" + maloai,
         {
           method: "delete",
           headers: {

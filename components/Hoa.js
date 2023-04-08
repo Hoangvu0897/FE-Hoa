@@ -16,12 +16,12 @@ const Hoa = ({ route }) => {
   const gethoas = async () => {
     try {
       const response = await fetch(
-        "http://192.168.1.8:3000/hoas/loaihoa/" + maloai
+        "http://10.45.230.217:3000/hoas/loaihoa/" + maloai
       );
       const json = await response.json();
       json.map(
         (element) =>
-          (element.hinhanh = "http://192.168.1.8:3000/images/" + element.hinh)
+          (element.hinhanh = "http://10.45.230.217:3000/images/" + element.hinh)
       );
       console.log(json);
       gandshoachon(json);
