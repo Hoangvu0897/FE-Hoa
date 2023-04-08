@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Hoa from "./components/Hoa";
+import ListLoaiHoa from "./components/Listhoa";
+import Loaihoa from "./components/Loaihoa";
+import Capnhatloaihoa from "./components/Capnhatloaihoa";
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="HoaType">
+        <Stack.Screen name="Loại Hoa" component={ListLoaiHoa}></Stack.Screen>
+        <Stack.Screen name="Hoa" component={Hoa}></Stack.Screen>
+        <Stack.Screen
+          name="Capnhatloaihoa"
+          component={Capnhatloaihoa}
+        ></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
